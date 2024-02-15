@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image
-from linker import web_caller
+import web_caller
 
 global interface_factor
 
@@ -13,55 +13,17 @@ def start():
     my_str3 = ctk.StringVar(root)
     my_str4 = ctk.StringVar(root)
     
-    def multiple_factor_validator(*args):
-        validator_1 = 0
-        validator_2 = 0
-        validator_3 = 0
-        validator_4 = 0
-        
+    def multiple_factor_validator(*args):        
         if what_frame == 1:
             if len(my_str.get()) == 11:
                 print_bt.configure(state='normal')
             else:
                 print_bt.configure(state='disabled')
-        """
-        if what_frame == 1:
-            validator_1 = 11
-        elif what_frame == 2:
-            validator_1 = 7
-            validator_2 = 11
-            validator_3 = 11
-            validator_4 = 10
-        elif what_frame == 3:
-            validator_1 = 7
-            validator_2 = 11
-        elif what_frame == 4:
-            validator_1 = 11
-        elif what_frame == 5:
-            validator_1 = 11
-            validator_2 = 6
-            
-        if a <= 1:
-            if len(my_str.get()) == validator_1:
+        if what_frame == 5:
+            if len(my_str.get()) == 11 and len(my_str2.get()) == 6:
                 print_bt.configure(state='normal')
             else:
                 print_bt.configure(state='disabled')
-        elif a == 2:
-            if (len(my_str.get()) == validator_1) and (len(my_str2.get()) == validator_2):
-                print_bt.configure(state='normal')
-            else:
-                print_bt.configure(state='disabled')
-        elif a == 3:
-            if (len(my_str.get()) == validator_1) and (len(my_str2.get()) == validator_2 and (len(my_str3) == validator_3)):
-                print_bt.configure(state='normal')
-            else:
-                print_bt.configure(state='disabled')
-        elif a == 4:
-            if (len(my_str.get()) == validator_1) and (len(my_str2.get()) == validator_2) and (len(my_str3.get()) == validator_3) and (len(my_str4.get()) == validator_4):
-                print_bt.configure(state='normal')
-            else:
-                print_bt.configure(state='disabled')
-        """
 
     def root_window():    
         root.minsize(width=1280, height=720)
@@ -202,15 +164,15 @@ def start():
     ibi_bt = (ctk.CTkButton(master=static_frame, text='Imprimir boleto\nIbi Telecom', 
                             command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 145, 254, ibi_entries, ibi_labels, 'ibi'),
                             state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
-    crlv_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nCRLV Digital',
-                             command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 144, 254, crlv_entries, crlv_labels, 'crlv'),
-                             state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
-    multa_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nMultas/Autuações',
-                              command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 120, 254, multas_entries, multa_labels, 'multa'),
-                              state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
-    ipva_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nIPVA',
-                             command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 144, 254, ipva_entries, ipva_labels, 'ipva'),
-                             state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
+    #crlv_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nCRLV Digital',
+    #                         command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 144, 254, crlv_entries, crlv_labels, 'crlv'),
+    #                         state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
+    #multa_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nMultas/Autuações',
+    #                          command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 120, 254, multas_entries, multa_labels, 'multa'),
+    #                          state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
+    #ipva_bt = (ctk.CTkButton(master=static_frame, text='Imprimir\nIPVA',
+    #                         command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 144, 254, ipva_entries, ipva_labels, 'ipva'),
+    #                         state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
     vivo_bt = (ctk.CTkButton(master=static_frame, text='Imprimir boleto\nVIVO',
                              command=lambda: change_frame(dinamic_frame, labels_list, entries_list, 144, 254, vivo_entries, vivo_labels, 'vivo'),
                              state='normal', border_color= '#FF1493', fg_color='#404040', hover_color='#FF007F', width=200, height=65, border_width = 2))
@@ -226,10 +188,10 @@ def start():
         width=300, height=75, border_width=1.5))
 
     ibi_bt.place(x=80, y=100)
-    crlv_bt.place(x=80, y=200)
-    multa_bt.place(x=80, y=300)
-    ipva_bt.place(x=350, y=100)
-    vivo_bt.place(x=350, y=200)
+    #crlv_bt.place(x=80, y=200)
+    #multa_bt.place(x=80, y=300)
+    vivo_bt.place(x=350, y=100)
+    #ipva_bt.place(x=350, y=200)
     print_bt.place(x=100, y=550)
 
     root.mainloop()
