@@ -9,6 +9,10 @@ Desenvolvi um projeto para uma gráfica, focado em proporcionar aos clientes uma
 
 Este projeto não apenas otimizou o processo de atendimento ao cliente, mas também melhorou significativamente a eficiência operacional da gráfica. Estou orgulhoso de ter contribuído para melhorar a experiência do cliente e facilitar as operações internas da empresa.
 
+## Requisitos
+
+Insira estes comandos no terminal para que seja possivel utilizar a aplicação.
+
 ```bash
 pip install selenium
 pip install webdriver-manager
